@@ -64,7 +64,7 @@ class ApiClient(object):
             configuration = Configuration()
         self.configuration = configuration
 
-        self.pool = ThreadPool()
+        # self.pool = ThreadPool()
         self.rest_client = RESTClientObject(configuration)
         self.default_headers = {}
         if header_name is not None:
@@ -74,8 +74,9 @@ class ApiClient(object):
         self.user_agent = 'Swagger-Codegen/6.1.0/python'
     
     def __del__(self):
-        self.pool.close()
-        self.pool.join()
+        pass
+        # self.pool.close()
+        # self.pool.join()
 
     @property
     def user_agent(self):
