@@ -14,6 +14,8 @@ from .apps_api import AppsApi
 from .apps_v1_api import AppsV1Api
 from .apps_v1beta1_api import AppsV1beta1Api
 from .apps_v1beta2_api import AppsV1beta2Api
+from .auditregistration_api import AuditregistrationApi
+from .auditregistration_v1alpha1_api import AuditregistrationV1alpha1Api
 from .authentication_api import AuthenticationApi
 from .authentication_v1_api import AuthenticationV1Api
 from .authentication_v1beta1_api import AuthenticationV1beta1Api
@@ -23,12 +25,15 @@ from .authorization_v1beta1_api import AuthorizationV1beta1Api
 from .autoscaling_api import AutoscalingApi
 from .autoscaling_v1_api import AutoscalingV1Api
 from .autoscaling_v2beta1_api import AutoscalingV2beta1Api
+from .autoscaling_v2beta2_api import AutoscalingV2beta2Api
 from .batch_api import BatchApi
 from .batch_v1_api import BatchV1Api
 from .batch_v1beta1_api import BatchV1beta1Api
 from .batch_v2alpha1_api import BatchV2alpha1Api
 from .certificates_api import CertificatesApi
 from .certificates_v1beta1_api import CertificatesV1beta1Api
+from .coordination_api import CoordinationApi
+from .coordination_v1beta1_api import CoordinationV1beta1Api
 from .core_api import CoreApi
 from .core_v1_api import CoreV1Api
 from .custom_objects_api import CustomObjectsApi
@@ -47,6 +52,7 @@ from .rbac_authorization_v1alpha1_api import RbacAuthorizationV1alpha1Api
 from .rbac_authorization_v1beta1_api import RbacAuthorizationV1beta1Api
 from .scheduling_api import SchedulingApi
 from .scheduling_v1alpha1_api import SchedulingV1alpha1Api
+from .scheduling_v1beta1_api import SchedulingV1beta1Api
 from .settings_api import SettingsApi
 from .settings_v1alpha1_api import SettingsV1alpha1Api
 from .storage_api import StorageApi

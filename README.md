@@ -83,15 +83,18 @@ supported versions of Kubernetes clusters.
 
 #### Compatibility matrix
 
-|                    | Kubernetes 1.4 | Kubernetes 1.5 | Kubernetes 1.6 | Kubernetes 1.7 | Kubernetes 1.8 | Kubernetes 1.9 | Kubernetes 1.10 |
-|--------------------|----------------|----------------|----------------|----------------|----------------|----------------|-----------------|
-| client-python 1.0  | +              | ✓              | -              | -              |-               |-               |                 |
-| client-python 2.0  | +              | +              | ✓              | -              |-               |-               |                 |
-| client-python 3.0  | +              | +              | +              | ✓              |-               |-               |                 |
-| client-python 4.0  | +              | +              | +              | +              |✓               |-               |                 |
-| client-python 5.0  | +              | +              | +              | +              |+               |✓               |                 |
-| client-python 6.0  | +              | +              | +              | +              |+               |+               |✓                |
-| client-python HEAD | +              | +              | +              | +              |+               |+               |✓                |
+|                    | Kubernetes 1.4 | Kubernetes 1.5 | Kubernetes 1.6 | Kubernetes 1.7 | Kubernetes 1.8 | Kubernetes 1.9 | Kubernetes 1.10 | Kubernetes 1.11 | Kubernetes 1.12 | Kubernetes 1.13 |
+|--------------------|----------------|----------------|----------------|----------------|----------------|----------------|-----------------|-----------------|-----------------|-----------------|
+| client-python 1.0  | +              | ✓              | -              | -              |-               |-               |                 |                 |                 |                 |
+| client-python 2.0  | +              | +              | ✓              | -              |-               |-               |                 |                 |                 |                 |
+| client-python 3.0  | +              | +              | +              | ✓              |-               |-               |                 |                 |                 |                 |
+| client-python 4.0  | +              | +              | +              | +              |✓               |-               |                 |                 |                 |                 |
+| client-python 5.0  | +              | +              | +              | +              |+               |✓               |                 |                 |                 |                 |
+| client-python 6.0  | +              | +              | +              | +              |+               |+               |✓                |                 |                 |                 |
+| client-python 7.0  | +              | +              | +              | +              |+               |+               |+                |✓                |                 |                 |
+| client-python 8.0  | +              | +              | +              | +              |+               |+               |+                |+                |✓                |                 |
+| client-python 9.0  | +              | +              | +              | +              |+               |+               |+                |+                |+                |✓                |
+| client-python HEAD | +              | +              | +              | +              |+               |+               |+                |+                |+                |✓                |
 
 Key:
 
@@ -108,16 +111,23 @@ between client-python versions.
 | Client version | Canonical source for OpenAPI spec    | Maintenance status            |
 |----------------|--------------------------------------|-------------------------------|
 | 1.0 Alpha/Beta | Kubernetes main repo, 1.5 branch     | ✗                             |
-| 1.0.x          | Kubernetes main repo, 1.5 branch     | ✓                             |
+| 1.0.x          | Kubernetes main repo, 1.5 branch     | ✗                             |
 | 2.0 Alpha/Beta | Kubernetes main repo, 1.6 branch     | ✗                             |
-| 2.0.x          | Kubernetes main repo, 1.6 branch     | ✓                             |
+| 2.0.x          | Kubernetes main repo, 1.6 branch     | ✗                             |
 | 3.0 Alpha/Beta | Kubernetes main repo, 1.7 branch     | ✗                             |
-| 3.0            | Kubernetes main repo, 1.7 branch     | ✓                             |
+| 3.0            | Kubernetes main repo, 1.7 branch     | ✗                             |
 | 4.0 Alpha/Beta | Kubernetes main repo, 1.8 branch     | ✗                             |
-| 4.0            | Kubernetes main repo, 1.8 branch     | ✓                             |
+| 4.0            | Kubernetes main repo, 1.8 branch     | ✗                             |
 | 5.0 Alpha/Beta | Kubernetes main repo, 1.9 branch     | ✗                             |
-| 5.0            | Kubernetes main repo, 1.9 branch     | ✓                             |
-| 6.0 Alpha/Beta | Kubernetes main repo, 1.10 branch    | ✓                             |
+| 5.0            | Kubernetes main repo, 1.9 branch     | ✗                             |
+| 6.0 Alpha/Beta | Kubernetes main repo, 1.10 branch    | ✗                             |
+| 6.0            | Kubernetes main repo, 1.10 branch    | ✗                             |
+| 7.0 Alpha/Beta | Kubernetes main repo, 1.11 branch    | ✗                             |
+| 7.0            | Kubernetes main repo, 1.11 branch    | ✓                             |
+| 8.0 Alpha/Beta | Kubernetes main repo, 1.12 branch    | ✗                             |
+| 8.0            | Kubernetes main repo, 1.12 branch    | ✓                             |
+| 9.0 Alpha/Beta | Kubernetes main repo, 1.13 branch    | ✗                             |
+| 9.0            | Kubernetes main repo, 1.13 branch    | ✓                             |
 
 
 Key:
@@ -125,11 +135,13 @@ Key:
 * `✓` Changes in main Kubernetes repo are manually ([should be automated](https://github.com/kubernetes-client/python/issues/177)) published to client-python when they are available.
 * `✗` No longer maintained; please upgrade.
 
+Kubernetes supports [three minor releases](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/release/versioning.md#supported-releases-and-component-skew) at a time. "Support" means we expect users to be running that version in production, though we may not port fixes back before the latest minor version. For example, when v1.3 comes out, v1.0 will no longer be supported. In consistent with Kubernetes support policy, we expect to support **three GA major releases** (corresponding to three Kubernetes minor releases) at a time.
+
 Note: There would be no maintenance for alpha/beta releases except the latest one.
 
 ## Community, Support, Discussion
 
-You can reach the maintainers of this project at [SIG API Machinery](https://github.com/kubernetes/community/tree/master/sig-api-machinery). If you have any problem with the package or any suggestions, please file an [issue](https://github.com/kubernetes-client/python/issues).
+If you have any problem on using the package or any suggestions, please start with reaching the [Kubernetes clients slack channel](https://kubernetes.slack.com/messages/C76GB48RK/), or filing an [issue](https://github.com/kubernetes-client/python/issues) to let us know. You can also reach the maintainers of this project at [SIG API Machinery](https://github.com/kubernetes/community/tree/master/sig-api-machinery).
 
 ### Code of Conduct
 

@@ -1,6 +1,6 @@
 # ref: https://docs.travis-ci.com/user/languages/python
 language: python
-dist: trusty
+dist: xenial
 sudo: true
 services:
   - docker
@@ -12,7 +12,7 @@ matrix:
      - python: 2.7
        env: TOXENV=py27-functional
      - python: 2.7
-       env: TOXENV=update-pep8
+       env: TOXENV=update-pycodestyle
      - python: 2.7
        env: TOXENV=docs
      - python: 2.7
@@ -27,6 +27,10 @@ matrix:
        env: TOXENV=py36
      - python: 3.6
        env: TOXENV=py36-functional
+     - python: 3.7
+       env: TOXENV=py37
+     - python: 3.7
+       env: TOXENV=py37-functional
 
 install:
   - pip install tox
